@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job search</title>
+</head>
+<body>
+    <h1>Job search</h1>
+    <form method="post" action="/api/v1/process_form">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br><br>
+
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="keywords" name="keywords" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
