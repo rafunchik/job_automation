@@ -1,4 +1,4 @@
-FROM python:3.11.5
+FROM python:3.11
 
 ENV PYTHONUNBUFFERED 1
 
@@ -15,7 +15,8 @@ RUN if [ "$DEV" = "true" ] ; then poetry install --with dev ; else poetry instal
 COPY ./app/ ./
 COPY ./ml/model/ ./ml/model/
 
+
 ENV PYTHONPATH "${PYTHONPATH}:/app"
 
 EXPOSE 8080
-CMD uvicorn main:app --host 0.0.0.0 --port 8080
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
