@@ -24,7 +24,7 @@ def get_jobs(location: str, keywords: str, age=386400):
     total = 1
     i = 1
     while total > 0:
-        time.sleep(2)
+        time.sleep(0.5)
         res = requests.get(target_url.format(age=age,
                                              converted_location=converted_location,
                                              converted_keywords=converted_keywords,
@@ -44,7 +44,7 @@ def get_jobs(location: str, keywords: str, age=386400):
                 pass
     target_url = 'https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/{}'
     for j in range(0, min(len(jobids), 10)):
-        time.sleep(1)
+        # time.sleep(1)
         resp = requests.get(
             url=target_url.format(jobids[j]),
             headers=headers)
